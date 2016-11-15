@@ -1,0 +1,23 @@
+#main {
+  width: 100%;
+  margin: 10px auto;
+}
+.post {
+    background-color: #181817;
+    display: inline-block;
+    margin: 4px 2px;
+    position: relative
+}
+
+.post, .post img {
+    width: 180px;
+    height: 180px;
+}
+
+.post span.title {
+  margin: 20px auto;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
