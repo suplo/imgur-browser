@@ -1,8 +1,7 @@
 {
   "scripts": {
     "start": "./node_modules/.bin/babel-node src/server/index.js",
-    "watch": "nodemon --exec babel-node src/server/index.js",
-    "postinstall": "NODE_ENV=production ./node_modules/.bin/gulp build"
+    "watch": "nodemon --exec babel-node src/server/index.js"
   },
   "dependencies": {
     "babel-cli": "^6.18.0",

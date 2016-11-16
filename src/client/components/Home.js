@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 const Lightbox = typeof window !== 'undefined' ? require('react-image-lightbox') : undefined;
 
 import { fetchGallery } from '../actions/gallery';
-import Album from './album';
-import Image from './image';
+import Album from './Album';
+import Image from './Image';
 
 class Home extends Component {
   constructor(props) {
