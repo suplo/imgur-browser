@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Album from './album';
 import Image from './image';
 
-export default class Home extends React.Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,3 +34,5 @@ export default class Home extends React.Component {
     );
   }
 }
+
+export default connect()(Home);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <div id="main">
@@ -9,3 +10,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default connect()(App);

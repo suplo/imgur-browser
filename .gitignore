@@ -27,7 +27,7 @@ chrome-user-data
 .idea
 *.iml
 .vscode
-public/js
-public/css
+public/*/*.*
+!public/favicon.ico
 bower_components
 webpack.config.babel.js
