@@ -18,18 +18,8 @@ var production = process.env.NODE_ENV === 'production';
 var dependencices = [
   'react',
   'react-dom',
-  'react-router',
-  'react-image-lightbox'
+  'react-router'
 ];
-
-gulp.task('vendor', function() {
-  return gulp.src([
-    'bower_components/jquery/dist/jquery.js',
-    ])
-    .pipe(concat('vendor.js'))
-    .pipe(gulpif(production, uglify({ mangle: false })))
-    .pipe(gulp.dest('public/js'));
-});
 
 gulp.task('browserify-vendor', function() {
   return browserify()
@@ -84,5 +74,5 @@ gulp.task('watch', function() {
   gulp.watch('asset/css/**/*.scss', ['styles']);
 });
 
-gulp.task('default', ['styles', 'vendor', 'browserify-watch', 'watch']);
-gulp.task('build', ['styles', 'vendor', 'browserify']);
+gulp.task('default', ['styles', 'browserify-watch', 'watch']);
+gulp.task('build', ['styles', 'browserify']);
