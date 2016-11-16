@@ -19,6 +19,7 @@ var dependencices = [
   'react',
   'react-dom',
   'react-router',
+  'react-image-lightbox'
 ];
 
 gulp.task('vendor', function() {

@@ -3,15 +3,22 @@
   margin: 10px auto;
 }
 .post {
-    background-color: #181817;
+    background-color: transparent;
     display: inline-block;
     margin: 4px 2px;
-    position: relative
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid transparent;
 }
 
-.post, .post img {
+.post {
     width: 180px;
     height: 180px;
+}
+
+.post img {
+  width: 176px;
+  height: 176px;
 }
 
 .post span.title {
@@ -20,6 +27,10 @@
   left: 0;
   width: 100%;
   text-align: center;
+}
+
+.post:hover {
+    border: 2px solid orange;
 }
 
 .navbar-link {
