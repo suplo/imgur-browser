@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { fetchGallery } from '../actions/gallery';
 import Album from './album';
 import Image from './image';
 
@@ -13,20 +14,17 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    $.ajax({
-      url: '/api/gallery'
-    })
-    .done((data) => {
-      this.setState({ images: data });
-    })
-    .fail((jqXhr) => {
-    });
+    this.props.dispatch(fetchGallery({
+      section: 'hot',
+      sort: 'viral',
+      showViral: false
+    }));
   }
 
   render() {
     return (
       <div>
-        {this.state.images.map((image, idx) => image.is_album
+        {this.props.images.map((image, idx) => image.is_album
           ? <Album key={idx} {...image} />
           : <Image key={idx} {...image} />
         )}
@@ -35,4 +33,11 @@ class Home extends Component {
   }
 }
 
-export default connect()(Home);
+function mapStateToProps(state) {
+  const { gallery } = state;
+  return {
+    images: gallery.images
+  }
+};
+
+export default connect(mapStateToProps)(Home);
